@@ -16,11 +16,10 @@
             <div class="bg3"></div>
             <div class="bg4"></div>
             <div class="bar" id="back">
-                    <div><a href="#">BASS</a></div>
                     <div><a href="#">Forum</a></div>
                     <div><a href="#">Chat</a></div>
-                    <div><a href="#">Diary</a></div>
-                    <div><a href="#">Design</a></div>
+                    <div><a href="#" onclick="bright()">Change Color</a></div>
+                    <div><a href="#" onclick="confirmCSS()">Design</a></div>
             </div>
             <center>
                 <div class="main">
@@ -127,245 +126,259 @@
                         <a href="#back">Go top</a>
                     </div>
                 </div>
-            </center>
-    <style>
-      
-     /* body設定：內容至中、背景色、字體 */
-     body {
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-        background: rgb(67, 56, 87);
-        font-family: 'Quicksand', Noto Sans TC;
-     }
-        
-     /* 上方選單設定：背景色、字體、flex設定 */
-     .bar {
-        background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
-        font-size: 24px;
-        font-weight: 200;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-     }
-        
-     /* 上方選單連結設定：字體、連結底線、outline邊框、呈現block型 */
-     .bar a {
-        display: block;
-        color: #FFF !important;
-        text-align: center;
-        padding: 12px 24px;
-        text-decoration: none !important;
-        font-family: 'Quicksand', cursive;
-        transition: all 0.3s ease-in-out;
-        outline: 1px transparent solid;
-        outline-offset: -4px;
-     }
-        
-     /* 選單連結hover設定：背景、outline邊框 */
-     .bar a:hover {
-        background: rgba(255, 155, 247, 0.3);
-        outline-color: rgb(255, 255, 255, 0.6);
-     }
-        
-        
-     /* 內容設定：最大寬度、字體 */
-     .intro, .wota {
-        max-width: 800px;
-        color: #FFF;
-        font-family: 'Quicksand', Noto Sans TC;
-        text-align: left;
-        padding: 30px;
-        font-size: 18px;
-        letter-spacing: 1px;
-     }
+                </center>
+        <style>
 
-     .intro p, .wota p{
-        padding: 6px 0px;
-     }
+         /* body設定：內容至中、背景色、字體 */
+         body {
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            background: rgb(67, 56, 87);
+            font-family: 'Quicksand', Noto Sans TC;
+         }
 
-     table {
-        width: 800px;
-     }
-
-     td {
-         color: #FFF;
-         padding: 18px 30px;
-         line-height: 30px;
-     }
-
-     .title {
-        background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
-     }
-
-     .title td {
-         padding: 6px 12px;
-     }
-        
-     /* 分隔線設定：寬度、高度、顏色 */
-     .bord{
-         width: 800px;
-         height: 3px;
-         background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
-         border: none;
-     }
-        
-     /* .pc在PC瀏覽時隱藏 */
-     .pc {
-         display: none;
-     }
-        
-     /* 表格分隔線設定：白邊框 */
-     table tr:nth-child(n+3) td{
-        border-top: 1px solid rgba(255, 255, 255, 0.6);
-     }
-
-     .special {
-        margin: 12px 0px;
-     }
-
-     /* 漸層字 */
-     .special a, .wota {
-       background: linear-gradient(60deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 50%, rgba(253,205,45,1) 90%);
-       -webkit-background-clip:text;
-       color: transparent;
-        font-weight: 400;
-        transition: all 0.2s ease-in-out;
-        text-decoration: none;
-        font-size: 26px;
-    }
-
-    /* 懸浮在Go Top的時候發亮（白陰影） */
-    .special a:hover {
-        filter: drop-shadow(0px 0px 2px #FFF);
-    }
-        
-    /* 黑陰影和其他相關字體設定 */
-    .wota {
-        padding: 12px 30px;
-        font-size: 20px;
-        text-align: center;
-        font-weight: bold;
-        filter: drop-shadow(0px 0px 1px #000);
-        display: inline-block;
-     }
-
-     .main {
-         margin-top: 42px;
-     }
-    
-        
-        
-        
-    /* 多層背景輪轉設定 */
-    div[class^="bg"] {
-       position: fixed;
-       top: 0px;
-       left: 0px;
-       height: 100%;
-       width: 100%;
-    }
-   
-    .bg1 {
-        background: rgb(36, 36, 36);
-        animation: bgchange 15.75s ease-out 0s infinite running;
-        z-index: -30;
-    }
-
-    .bg2 {
-        background: rgb(70, 30, 54);
-        animation: bgchange 15.75s ease-out 3.75s infinite running;
-        z-index: -31;
-    }
-
-    .bg3 {
-        background: rgb(49, 25, 71);
-        animation: bgchange 15.75s ease-out 7.5s infinite running;
-        z-index: -32;
-    }
-
-    .bg4 {
-        background: rgb(25, 42, 73);
-        animation: bgchange 15.75s ease-out 11.25s infinite running;
-        z-index: -33;
-    }
-
-     @keyframes bgchange {
-         0% {left: 0px;}
-         25% {left: 0px;}
-         30% {left: -100%;opacity: 1;} 
-         31% {left: -100%;opacity: 0;}
-         94% {left: 100%;opacity: 0;} 
-         95% {left: 100%;opacity: 1;}
-         100% {left: 0px;opacity: 1;}
-     }
-    
-    
-     /* 手機瀏覽用的CSS */
-     @media only screen and (max-width:600px) {
+         /* 上方選單設定：背景色、字體、flex設定 */
          .bar {
-             background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
-             font-weight: 200;
-             flex-wrap: wrap;
+            background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
+            font-size: 24px;
+            font-weight: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
          }
 
+         /* 上方選單連結設定：字體、連結底線、outline邊框、呈現block型 */
          .bar a {
-             display: block;
-             padding: 12px;
+            display: block;
+            color: #FFF !important;
+            text-align: center;
+            padding: 12px 24px;
+            text-decoration: none !important;
+            font-family: 'Quicksand', cursive;
+            transition: all 0.3s ease-in-out;
+            outline: 1px transparent solid;
+            outline-offset: -4px;
          }
 
+         /* 選單連結hover設定：背景、outline邊框 */
          .bar a:hover {
-             outline: 1px transparent solid;
-             background: none;
+            background: rgba(255, 155, 247, 0.3);
+            outline-color: rgb(255, 255, 255, 0.6);
          }
-    
-         .bar a::before, .bar a::after {
-             content: '◆';
-             font-size: 12px;
-             vertical-align:0.42em;
-             margin-right: 12px;
-             opacity: 0;
-             transition: all 0.3s ease-in-out;
+
+
+         /* 內容設定：最大寬度、字體 */
+         .intro, .wota {
+            max-width: 800px;
+            color: #FFF;
+            font-family: 'Quicksand', Noto Sans TC;
+            text-align: left;
+            padding: 30px;
+            font-size: 18px;
+            letter-spacing: 1px;
          }
-    
-         .bar a:hover::before {
-             opacity: 1;
-             margin-right: 6px;
-             margin-left: 6px;
+
+         .intro p, .wota p{
+            padding: 6px 0px;
          }
-         .main, table, .bord {
-             max-width: 100%;
-             width: 100%;
+
+         table {
+            width: 800px;
          }
+
+         td {
+             color: #FFF;
+             padding: 18px 30px;
+             line-height: 30px;
+         }
+
+         .title {
+            background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
+         }
+
+         .title td {
+             padding: 6px 12px;
+         }
+
+         /* 分隔線設定：寬度、高度、顏色 */
+         .bord{
+             width: 800px;
+             height: 3px;
+             background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
+             border: none;
+         }
+
+         /* .pc在PC瀏覽時隱藏 */
          .pc {
-             display: inherit;
+             display: none;
          }
-        
+
+         /* 表格分隔線設定：白邊框 */
+         table tr:nth-child(n+3) td{
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+         }
+
+         .special {
+            margin: 12px 0px;
+         }
+
+         /* 漸層字 */
+         .special a, .wota {
+           background: linear-gradient(60deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 50%, rgba(253,205,45,1) 90%);
+           -webkit-background-clip:text;
+           color: transparent;
+            font-weight: 400;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: 26px;
+        }
+
+        /* 懸浮在Go Top的時候發亮（白陰影） */
+        .special a:hover {
+            filter: drop-shadow(0px 0px 2px #FFF);
+        }
+
+        /* 黑陰影和其他相關字體設定 */
+        .wota {
+            padding: 12px 30px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            filter: drop-shadow(0px 0px 1px #000);
+            display: inline-block;
+         }
+
+         .main {
+             margin-top: 42px;
+         }
+
+
+
+
+        /* 多層背景輪轉設定 */
+        div[class^="bg"] {
+           position: fixed;
+           top: 0px;
+           left: 0px;
+           height: 100%;
+           width: 100%;
+        }
+
         .bg1 {
             background: rgb(36, 36, 36);
-            animation: bgchange 10.5s ease-out 0s infinite running;
+            animation: bgchange 15.75s ease-out 0s infinite running;
             z-index: -30;
         }
 
         .bg2 {
             background: rgb(70, 30, 54);
-            animation: bgchange 10.5s ease-out 2.5s infinite running;
+            animation: bgchange 15.75s ease-out 3.75s infinite running;
             z-index: -31;
         }
 
         .bg3 {
             background: rgb(49, 25, 71);
-            animation: bgchange 10.5s ease-out 5s infinite running;
+            animation: bgchange 15.75s ease-out 7.5s infinite running;
             z-index: -32;
         }
 
         .bg4 {
             background: rgb(25, 42, 73);
-            animation: bgchange 10.5s ease-out 7.5s infinite running;
+            animation: bgchange 15.75s ease-out 11.25s infinite running;
             z-index: -33;
         }
-     }
-    </style>
+
+         @keyframes bgchange {
+             0% {left: 0px;}
+             25% {left: 0px;}
+             30% {left: -100%;opacity: 1;} 
+             31% {left: -100%;opacity: 0;}
+             94% {left: 100%;opacity: 0;} 
+             95% {left: 100%;opacity: 1;}
+             100% {left: 0px;opacity: 1;}
+         }
+
+
+         /* 手機瀏覽用的CSS */
+         @media only screen and (max-width:600px) {
+             .bar {
+                 background: linear-gradient(30deg, rgba(41,153,255,1) 18%, rgba(226,132,186,1) 60%, rgba(253,205,45,1) 100%);
+                 font-weight: 200;
+                 flex-wrap: wrap;
+             }
+
+             .bar a {
+                 display: block;
+                 padding: 12px;
+             }
+
+             .bar a:hover {
+                 outline: 1px transparent solid;
+                 background: none;
+             }
+
+             .bar a::before, .bar a::after {
+                 content: '◆';
+                 font-size: 12px;
+                 vertical-align:0.42em;
+                 margin-right: 12px;
+                 opacity: 0;
+                 transition: all 0.3s ease-in-out;
+             }
+
+             .bar a:hover::before {
+                 opacity: 1;
+                 margin-right: 6px;
+                 margin-left: 6px;
+             }
+             .main, table, .bord {
+                 max-width: 100%;
+                 width: 100%;
+             }
+             .pc {
+                 display: inherit;
+             }
+
+            .bg1 {
+                background: rgb(36, 36, 36);
+                animation: bgchange 10.5s ease-out 0s infinite running;
+                z-index: -30;
+            }
+
+            .bg2 {
+                background: rgb(70, 30, 54);
+                animation: bgchange 10.5s ease-out 2.5s infinite running;
+                z-index: -31;
+            }
+
+            .bg3 {
+                background: rgb(49, 25, 71);
+                animation: bgchange 10.5s ease-out 5s infinite running;
+                z-index: -32;
+            }
+
+            .bg4 {
+                background: rgb(25, 42, 73);
+                animation: bgchange 10.5s ease-out 7.5s infinite running;
+                z-index: -33;
+            }
+         }
+            
+            .bright {
+                filter: invert(1);
+            }
+        </style>
+        <script>
+            function confirmCSS() {
+                alert("現在暫不開放CSS委託！");
+            }
+            
+            function bright() {
+                var element = document.body;
+                element.classList.toggle("bright");
+            }
+        </script>
     </body>
 </html>
