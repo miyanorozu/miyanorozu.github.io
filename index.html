@@ -367,7 +367,10 @@
          }
             
             .bright {
-                filter: invert(1);
+                filter: invert(100%) hue-rotate(160deg);
+            }
+            .bright_font {
+                color: #000;
             }
         </style>
         <script>
@@ -378,6 +381,8 @@
             function bright() {
                 var element = document.body;
                 element.classList.toggle("bright");
+                document.a.classList.toggle("bright_font");
+                document.getElementsByClassName("title").toggle("bright_font");
             }
         </script>
     </body>
