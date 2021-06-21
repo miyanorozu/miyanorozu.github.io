@@ -147,6 +147,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
+            overflow-x: hidden;
          }
 
          /* 上方選單連結設定：字體、連結底線、outline邊框、呈現block型 */
@@ -370,10 +371,7 @@
             .bright {
                 filter: invert(100%) hue-rotate(160deg);
             }
-            .bright_font {
-                color: #000 !important;
-                outline-color: #000 !important;
-            }
+            
         </style>
         <script>
             function confirmCSS() {
@@ -383,8 +381,6 @@
             function bright() {
                 var element = document.body;
                 element.classList.toggle("bright");
-                document.querySelectorAll(".bar a").classList.toggle("brightFont");
-                document.querySelectorAll(".title").classList.toggle("brightFont");
             }
         </script>
     </body>
