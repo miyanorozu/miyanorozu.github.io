@@ -366,12 +366,13 @@
             }
          }
             
+            /* 白色主題 */
             .bright {
                 filter: invert(100%) hue-rotate(160deg);
             }
             .bright_font {
-                color: #000;
-                outline-color: #000;
+                color: #000 !important;
+                outline-color: #000 !important;
             }
         </style>
         <script>
@@ -382,8 +383,8 @@
             function bright() {
                 var element = document.body;
                 element.classList.toggle("bright");
-                document.querySelectorAll(".bar a").classList.toggle("bright_font");
-                document.querySelectorAll(".title").classList.toggle("bright_font");
+                document.querySelectorAll(".bar a").classList.toggle("brightFont");
+                document.querySelectorAll(".title").classList.toggle("brightFont");
             }
         </script>
     </body>
