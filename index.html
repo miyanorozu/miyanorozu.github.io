@@ -370,8 +370,8 @@
                 filter: invert(100%) hue-rotate(160deg);
             }
             .bright_font {
-                color: #FFF;
-                outline-color: #FFF;
+                color: #000;
+                outline-color: #000;
             }
         </style>
         <script>
@@ -382,8 +382,8 @@
             function bright() {
                 var element = document.body;
                 element.classList.toggle("bright");
-                document.a.classList.toggle("bright_font");
-                document.getElementsByClassName("title").toggle("bright_font");
+                document.querySelectorAll(".bar a").classList.toggle("bright_font");
+                document.querySelectorAll(".title").classList.toggle("bright_font");
             }
         </script>
     </body>
