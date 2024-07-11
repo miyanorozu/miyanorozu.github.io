@@ -11,10 +11,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200&family=Big+Shoulders+Display&family=Cormorant+Garamond&family=Roboto+Slab:wght@200;300&family=Righteous&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
-            <div class="bg1"></div>
-            <div class="bg2"></div>
-            <div class="bg3"></div>
-            <div class="bg4"></div>
             <div class="bar" id="back">
                     <div><a href="#bias">My Bias</a></div>
                     <div><a href="#" onclick="bright()">Change Color</a></div>
@@ -255,53 +251,7 @@
              margin-top: 42px;
          }
 
-
-
-
-        /* 多層背景輪轉設定 */
-        div[class^="bg"] {
-           position: fixed;
-           top: 0px;
-           left: 0px;
-           height: 100%;
-           width: 100%;
-        }
-
-        .bg1 {
-            background: rgb(36, 36, 36);
-            animation: bgchange 15.75s ease-out 0s infinite running;
-            z-index: -30;
-        }
-
-        .bg2 {
-            background: rgb(70, 30, 54);
-            animation: bgchange 15.75s ease-out 3.75s infinite running;
-            z-index: -31;
-        }
-
-        .bg3 {
-            background: rgb(49, 25, 71);
-            animation: bgchange 15.75s ease-out 7.5s infinite running;
-            z-index: -32;
-        }
-
-        .bg4 {
-            background: rgb(25, 42, 73);
-            animation: bgchange 15.75s ease-out 11.25s infinite running;
-            z-index: -33;
-        }
-
-         @keyframes bgchange {
-             0% {left: 0px;}
-             25% {left: 0px;}
-             30% {left: -100%;opacity: 1;} 
-             31% {left: -100%;opacity: 0;}
-             94% {left: 100%;opacity: 0;} 
-             95% {left: 100%;opacity: 1;}
-             100% {left: 0px;opacity: 1;}
-         }
-
-
+            
          /* 手機瀏覽用的CSS */
          @media only screen and (max-width:600px) {
              .bar {
